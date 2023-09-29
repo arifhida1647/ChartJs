@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mailbox</title>
+
+    <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="AdminLTE-3.2.0/plugins/fontawesome-free/css/all.min.css">
+    <!-- icheck bootstrap -->
+    <link rel="stylesheet" href="AdminLTE-3.2.0/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="AdminLTE-3.2.0/dist/css/adminlte.css">
+    <!-- AOS  -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="bootstrap-icons/font/bootstrap-icons.min.css">
+
+</head>
+
+<body class="hold-transition sidebar-mini">
+    <div class="wrapper">
+        <!-- Main Sidebar Container -->
+        <aside class="main-sidebar sidebar-light-danger elevation-4 ">
+            <!-- Brand Logo -->
+
+
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <!-- Sidebar user (optional) -->
+                <div class="user-panel mt-5 pb-3 mb-3 d-flex">
+                    <div class="image">
+                        <img src="arif.JPG" class="img-circle elevation-2" alt="User Image">
+                    </div>
+                    <div class="info">
+                        <h5 class="mt-2 "><a href="#" class="d-block text-dark">Arif Hidayat</a></h5>
+                    </div>
+                </div>
+                <div class="user-panel pb-3 mb-3 d-flex">
+                    <div class="info">
+                        <h5 class="mt-2 "><a href="#" class="d-block text-dark">CHART JS</a></h5>
+                    </div>
+                </div>
+
+
+                <!-- Sidebar Menu -->
+                <nav class="mt-5">
+                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
+                        data-accordion="false">
+                        <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+
+                        <li class="nav-item mb-3 ">
+                            <a href="index.html" class="nav-link ">
+                                <i class="nav-icon fas fa-table"></i>
+                                <p>
+                                    Chart Bar/line
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item mb-3">
+                            <a href="chartpie.html" class="nav-link">
+                                <i class="nav-icon bi bi-pie-chart"></i>
+                                <p>
+                                    Chart Pie
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item mb-3 ml-3">
+                            <a href="chart3d.html" class="nav-link  active shadow">
+                                <i class="nav-icon bi bi-badge-3d"></i>
+                                <p>
+                                    Chart 3D
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item mb-3">
+                            <a href="map.html" class="nav-link">
+                                <i class="nav-icon bi bi-globe-asia-australia"></i>
+                                <p>
+                                    Maps
+                                </p>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <!-- /.sidebar-menu -->
+            </div>
+            <!-- /.sidebar -->
+        </aside>
+
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            <!-- Content Header (Page header) -->
+            <section class="content-header">
+                <div class="container-fluid">
+                    <div class="row mb-2">
+                        <div class="col-sm-6">
+                            <h1>3D CHARTS</h1>
+                        </div>
+                        <div class="col-sm-6">
+                            <ol class="breadcrumb float-sm-right">
+                                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                                <li class="breadcrumb-item active">3D Chart</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div><!-- /.container-fluid -->
+            </section>
+
+            <!-- Main content -->
+            <section class="content">
+                <div class="row">
+                    <div class="col-sm-6" data-aos="zoom-in" data-aos-duration="2500">
+                        <figure class="highcharts-figure shadow-lg border border-danger">
+                            <div id="3d-bar" style="height: 500px;"></div>
+                        </figure>
+                    </div>
+                    <!-- /.col -->
+                    <div class="col-sm-6" data-aos="zoom-in" data-aos-duration="2500">
+                        <figure class="highcharts-figure shadow-lg border border-danger">
+                            <div id="3d-pie" style="height: 500px;"></div>
+                        </figure>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6" data-aos="fade-up" data-aos-duration="2500">
+                        <figure class="highcharts-figure shadow-lg border border-danger">
+                            <div id="3d-cylinder" style="height: 500px;"></div>
+                        </figure>
+                    </div>
+                    <div class="col-sm-6" data-aos="fade-up" data-aos-duration="2500">
+                        <div class=" shadow-lg border border-danger">
+                            <figure class="highcharts-figure">
+                                <div id="3d-column" style="height: 500px;"></div>
+                            </figure>
+                            <div id="sliders" style="margin-left: 10px;">
+                                <table>
+                                    <tr>
+                                        <td><label for="alpha">Alpha Angle</label></td>
+                                        <td><input id="alpha" type="range" min="0" max="45" value="15" /> <span
+                                                id="alpha-value" class="value"></span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><label for="beta">Beta Angle</label></td>
+                                        <td><input id="beta" type="range" min="-45" max="45" value="15" /> <span
+                                                id="beta-value" class="value"></span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><label for="depth">Depth</label></td>
+                                        <td><input id="depth" type="range" min="20" max="100" value="50" /> <span
+                                                id="depth-value" class="value"></span></td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
+        </div>
+
+        <!-- /.content-wrapper -->
+        <footer class="main-footer text-center bg-light">
+            <strong>Copyright &copy; <a href="https://maxy.academy" class="text-dark">Maxy Academy</a>.</strong> All
+            rights
+            reserved.
+        </footer>
+
+
+
+        <!-- Control Sidebar -->
+        <aside class="control-sidebar control-sidebar-dark  ">
+            <!-- Control sidebar content goes here -->
+        </aside>
+        <!-- /.control-sidebar -->
+    </div>
+    <!-- ./wrapper -->
+
+    <!-- jQuery -->
+    <script src="AdminLTE-3.2.0/plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap 4 -->
+    <script src="AdminLTE-3.2.0/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="AdminLTE-3.2.0/dist/js/adminlte.min.js"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="AdminLTE-3.2.0/dist/js/demo.js"></script>
+    <!-- Page specific script -->
+    <script>
+        $(function () {
+            //Enable check and uncheck all functionality
+            $('.checkbox-toggle').click(function () {
+                var clicks = $(this).data('clicks')
+                if (clicks) {
+                    //Uncheck all checkboxes
+                    $('.mailbox-messages input[type=\'checkbox\']').prop('checked', false)
+                    $('.checkbox-toggle .far.fa-check-square').removeClass('fa-check-square').addClass('fa-square')
+                } else {
+                    //Check all checkboxes
+                    $('.mailbox-messages input[type=\'checkbox\']').prop('checked', true)
+                    $('.checkbox-toggle .far.fa-square').removeClass('fa-square').addClass('fa-check-square')
+                }
+                $(this).data('clicks', !clicks)
+            })
+
+            //Handle starring for font awesome
+            $('.mailbox-star').click(function (e) {
+                e.preventDefault()
+                //detect type
+                var $this = $(this).find('a > i')
+                var fa = $this.hasClass('fa')
+
+                //Switch states
+                if (fa) {
+                    $this.toggleClass('fa-star')
+                    $this.toggleClass('fa-star-o')
+                }
+            })
+        })
+    </script>
+    <!-- AOS  -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/highcharts-3d.js"></script>
+    <script src="https://code.highcharts.com/modules/cylinder.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+    <script src="highcharts/themes/grid-light.js"></script>
+    <script src="3d-chart.js"></script>
+</body>
+
+</html>

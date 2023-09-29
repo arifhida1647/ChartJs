@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>DataTables</title>
+
+    <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="AdminLTE-3.2.0/plugins/fontawesome-free/css/all.min.css">
+    <!-- DataTables -->
+    <link rel="stylesheet" href="AdminLTE-3.2.0/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="AdminLTE-3.2.0/plugins/datatables-responsive/css/responsive.bootstrap4.css">
+    <link rel="stylesheet" href="AdminLTE-3.2.0/plugins/datatables-buttons/css/buttons.bootstrap4.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="AdminLTE-3.2.0/dist/css/adminlte.css">
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="bootstrap-icons/font/bootstrap-icons.min.css">
+</head>
+
+<body class="hold-transition sidebar-mini">
+    <div class="wrapper">
+
+        <!-- Main Sidebar Container -->
+        <aside class="main-sidebar sidebar-light-danger elevation-4 ">
+            <!-- Brand Logo -->
+
+
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <!-- Sidebar user (optional) -->
+                <div class="user-panel mt-5 pb-3 mb-3 d-flex">
+                    <div class="image">
+                        <img src="arif.JPG" class="img-circle elevation-2" alt="User Image">
+                    </div>
+                    <div class="info">
+                        <h5 class="mt-2 "><a href="#" class="d-block text-dark">Arif Hidayat</a></h5>
+                    </div>
+                </div>
+                <div class="user-panel pb-3 mb-3 d-flex">
+                    <div class="info">
+                        <h5 class="mt-2 "><a href="#" class="d-block text-dark">CHART JS</a></h5>
+                    </div>
+                </div>
+
+                <!-- Sidebar Menu -->
+                <nav class="mt-5">
+                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
+                        data-accordion="false">
+                        <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+                        <li class="nav-item mb-3 ml-3">
+                            <a href="index.html" class="nav-link active shadow">
+                                <i class="nav-icon fas fa-table"></i>
+                                <p>
+                                    Chart Bar/line
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item mb-3">
+                            <a href="chartpie.html" class="nav-link">
+                                <i class="nav-icon bi bi-pie-chart"></i>
+                                <p>
+                                    Chart Pie
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item mb-3">
+                            <a href="chart3d.html" class="nav-link">
+                                <i class="nav-icon bi bi-badge-3d"></i>
+                                <p>
+                                    Chart 3D
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item mb-3">
+                            <a href="map.html" class="nav-link">
+                                <i class="nav-icon bi bi-globe-asia-australia"></i>
+                                <p>
+                                    Maps
+                                </p>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <!-- /.sidebar-menu -->
+            </div>
+            <!-- /.sidebar -->
+        </aside>
+
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            <!-- Content Header (Page header) -->
+            <section class="content-header">
+                <div class="container-fluid">
+                    <div class="row mb-2">
+                        <div class="col-sm-6">
+                            <h1>CHAT BAR AND LINE</h1>
+                        </div>
+                        <div class="col-sm-6">
+                            <ol class="breadcrumb float-sm-right">
+                                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                            </ol>
+                        </div>
+                    </div>
+                </div><!-- /.container-fluid -->
+            </section>
+
+            <!-- Main content -->
+            <section class="content">
+                <div class="container-fluid" data-aos="zoom-in" data-aos-duration="2500">
+                    <div class="row">
+                        <div class="col-sm-6" data-aos="fade-up" data-aos-duration="2500">
+                            <figure class="highcharts-figure shadow-lg border border-danger">
+                                <div id="chart-bar" style="height: 500px;"></div>
+                                <table id="datatable" style="display: none;">
+                                    <thead>
+                                        <tr>
+                                            <th></th>
+                                            <th>Boys</th>
+                                            <th>Girls</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th>2016</th>
+                                            <td>30 386</td>
+                                            <td>28 504</td>
+                                        </tr>
+                                        <tr>
+                                            <th>2017</th>
+                                            <td>29 173</td>
+                                            <td>27 460</td>
+                                        </tr>
+                                        <tr>
+                                            <th>2018</th>
+                                            <td>28 430</td>
+                                            <td>26 690</td>
+                                        </tr>
+                                        <tr>
+                                            <th>2019</th>
+                                            <td>28 042</td>
+                                            <td>26 453</td>
+                                        </tr>
+                                        <tr>
+                                            <th>2020</th>
+                                            <td>27 063</td>
+                                            <td>25 916</td>
+                                        </tr>
+                                        <tr>
+                                            <th>2021</th>
+                                            <td>28 684</td>
+                                            <td>27 376</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </figure>
+                            <!-- /.card -->
+                        </div>
+                        <div class="col-sm-6" data-aos="fade-up" data-aos-duration="2500">
+                            <figure class="highcharts-figure shadow-lg border border-danger">
+                                <div id="chart-line" style="height: 500px;"></div>
+                            </figure>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <figure class="highcharts-figure shadow-lg border border-danger">
+                                <div id="chart-combine"></div>
+                            </figure>
+                        </div>
+                        <!-- /.row -->
+                    </div>
+            </section>
+            <!-- /.content -->
+        </div>
+        <!-- /.content-wrapper -->
+        <footer class="main-footer text-center bg-light">
+            <strong>Copyright &copy; <a href="https://maxy.academy" class="text-dark">Maxy Academy</a>.</strong> All
+            rights
+            reserved.
+        </footer>
+
+        <!-- Control Sidebar -->
+        <aside class="control-sidebar control-sidebar-dark">
+            <!-- Control sidebar content goes here -->
+        </aside>
+        <!-- /.control-sidebar -->
+    </div>
+    <!-- ./wrapper -->
+
+    <!-- jQuery -->
+    <script src="AdminLTE-3.2.0/plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap 4 -->
+    <script src="AdminLTE-3.2.0/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- DataTables  & Plugins -->
+    <script src="AdminLTE-3.2.0/plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="AdminLTE-3.2.0/plugins/datatables/jquery.dataTables.js"></script>
+    <script src="AdminLTE-3.2.0/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+    <script src="AdminLTE-3.2.0/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+    <script src="AdminLTE-3.2.0/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+    <script src="AdminLTE-3.2.0/plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
+    <script src="AdminLTE-3.2.0/plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
+    <script src="AdminLTE-3.2.0/plugins/jszip/jszip.min.js"></script>
+    <script src="AdminLTE-3.2.0/plugins/pdfmake/pdfmake.min.js"></script>
+    <script src="AdminLTE-3.2.0/plugins/pdfmake/vfs_fonts.js"></script>
+    <script src="AdminLTE-3.2.0/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
+    <script src="AdminLTE-3.2.0/plugins/datatables-buttons/js/buttons.print.min.js"></script>
+    <script src="AdminLTE-3.2.0/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="AdminLTE-3.2.0/dist/js/adminlte.min.js"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="AdminLTE-3.2.0/dist/js/demo.js"></script>
+    <!-- Page specific script -->
+    <script>
+        $(function () {
+            $("#example1").DataTable({
+                "responsive": true, "lengthChange": false, "autoWidth": false,
+                "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+            }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+            $('#example2').DataTable({
+                "paging": true,
+                "lengthChange": false,
+                "searching": false,
+                "ordering": true,
+                "info": true,
+                "autoWidth": false,
+                "responsive": true,
+            }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+            $('#example3').DataTable({
+                "paging": true,
+                "lengthChange": false,
+                "searching": false,
+                "ordering": true,
+                "info": true,
+                "autoWidth": false,
+                "responsive": true,
+            });
+        });
+
+    </script>
+    <!-- AOS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/data.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+    <script src="chart-bar.js"></script>
+    <script src="chart-line.js"></script>
+    <script src="chart-combine.js"></script>
+</body>
+
+</html>

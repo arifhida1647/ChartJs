@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Calendar</title>
+
+    <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="AdminLTE-3.2.0/plugins/fontawesome-free/css/all.min.css">
+    <!-- fullCalendar -->
+    <link rel="stylesheet" href="AdminLTE-3.2.0/plugins/fullcalendar/main.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="AdminLTE-3.2.0/dist/css/adminlte.css">
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="bootstrap-icons/font/bootstrap-icons.min.css">
+</head>
+
+<body class="hold-transition sidebar-mini">
+    <div class="wrapper">
+
+        <!-- Main Sidebar Container -->
+        <aside class="main-sidebar sidebar-light-danger elevation-4 ">
+            <!-- Brand Logo -->
+
+
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <!-- Sidebar user (optional) -->
+                <div class="user-panel mt-5 pb-3 mb-3 d-flex">
+                    <div class="image">
+                        <img src="arif.JPG" class="img-circle elevation-2" alt="User Image">
+                    </div>
+                    <div class="info">
+                        <h5 class="mt-2 "><a href="#" class="d-block text-dark">Arif Hidayat</a></h5>
+                    </div>
+                </div>
+                <div class="user-panel pb-3 mb-3 d-flex">
+                    <div class="info">
+                        <h5 class="mt-2 "><a href="#" class="d-block text-dark">CHART JS</a></h5>
+                    </div>
+                </div>
+
+
+                <!-- Sidebar Menu -->
+                <nav class="mt-5">
+                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
+                        data-accordion="false">
+                        <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+
+                        <li class="nav-item mb-3">
+                            <a href="index.html" class="nav-link ">
+                                <i class="nav-icon fas fa-table"></i>
+                                <p>
+                                    Chart Bar/line
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item mb-3  ml-3">
+                            <a href="chartpie.html" class="nav-link active shadow">
+                                <i class="nav-icon bi bi-pie-chart"></i>
+                                <p>
+                                    Chart Pie
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item mb-3">
+                            <a href="chart3d.html" class="nav-link">
+                                <i class="nav-icon bi bi-badge-3d"></i>
+                                <p>
+                                    Chart 3D
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item mb-3">
+                            <a href="map.html" class="nav-link">
+                                <i class="nav-icon bi bi-globe-asia-australia"></i>
+                                <p>
+                                    Maps
+                                </p>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <!-- /.sidebar-menu -->
+            </div>
+            <!-- /.sidebar -->
+        </aside>
+
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            <!-- Content Header (Page header) -->
+            <section class="content-header">
+                <div class="container-fluid">
+                    <div class="row mb-2">
+                        <div class="col-sm-6">
+                            <h1>CHART PIE</h1>
+                        </div>
+                        <div class="col-sm-6">
+                            <ol class="breadcrumb float-sm-right">
+                                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                                <li class="breadcrumb-item active">Chart Pie</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div><!-- /.container-fluid -->
+            </section>
+
+            <!-- Main content -->
+            <section class="content">
+                <div class="container-fluid">
+                    <div class="row mb-2">
+                        <div class=" col-sm-6" data-aos="fade-up" data-aos-duration="2500">
+                        <figure class="highcharts-figure shadow-lg border border-danger">
+                            <div id="pie-chart1" style="height: 500px;"></div>
+                        </figure>
+                    </div>
+                    <div class="col-sm-6" data-aos="fade-up" data-aos-duration="2500">
+                        <figure class="highcharts-figure shadow-lg border border-danger">
+                            <div id="pie-chart2" style="height: 500px;"></div>
+                        </figure>
+                    </div>
+                    <div class="col-sm-6" data-aos="zoom-in" data-aos-duration="2500">
+                        <figure class="highcharts-figure shadow-lg border border-danger">
+                            <div id="pie-chart3" style="height: 500px;"></div>
+                        </figure>
+                    </div>
+                    <div class="col-sm-6" data-aos="zoom-in" data-aos-duration="2500">
+                        <figure class="highcharts-figure shadow-lg border border-danger">
+                            <div id="pie-donut" style="height: 500px;"></div>
+                        </figure>
+                    </div>
+                    
+                </div>
+
+        </div>
+        </section>
+
+    </div>
+
+    <footer class="main-footer text-center bg-light">
+        <strong>Copyright &copy; <a href="https://maxy.academy" class="text-dark">Maxy Academy</a>.</strong> All
+        rights
+        reserved.
+    </footer>
+
+
+    <!-- Control Sidebar -->
+    <aside class="control-sidebar control-sidebar-dark">
+        <!-- Control sidebar content goes here -->
+    </aside>
+    <!-- /.control-sidebar -->
+    </div>
+    <!-- ./wrapper -->
+
+    <!-- jQuery -->
+    <script src="AdminLTE-3.2.0/plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="AdminLTE-3.2.0/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- jQuery UI -->
+    <script src="AdminLTE-3.2.0/plugins/jquery-ui/jquery-ui.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="AdminLTE-3.2.0/dist/js/adminlte.min.js"></script>
+    <!-- fullCalendar 2.2.5 -->
+    <script src="AdminLTE-3.2.0/plugins/moment/moment.min.js"></script>
+    <script src="AdminLTE-3.2.0/plugins/fullcalendar/main.js"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="AdminLTE-3.2.0/dist/js/demo.js"></script>
+    <!-- AOS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/data.js"></script>
+    <script src="https://code.highcharts.com/modules/drilldown.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+    <script src="highcharts/themes/sand-signika.js"></script>
+
+    <script src="pie-chart.js"></script>
+    <script src="node_modules/highcharts/themes/dark-unica.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Calendar</title>
+
+    <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="AdminLTE-3.2.0/plugins/fontawesome-free/css/all.min.css">
+    <!-- fullCalendar -->
+    <link rel="stylesheet" href="AdminLTE-3.2.0/plugins/fullcalendar/main.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="AdminLTE-3.2.0/dist/css/adminlte.css">
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <link href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.css" rel="stylesheet">
+    <link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" href="bootstrap-icons/font/bootstrap-icons.min.css">
+    <style>
+        #side-box {
+            float: right;
+            width: 16%;
+            margin: 100px 1% 0;
+            padding-left: 1%;
+            border-left: 1px solid silver;
+            display: none;
+        }
+
+        #info-box {
+            margin-top: 10px;
+        }
+
+        .or-view-as {
+            margin: 0.5em 0;
+        }
+
+        #up {
+            line-height: 30px;
+            height: 30px;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        #up a {
+            cursor: pointer;
+            padding-left: 40px;
+        }
+
+        #chkDataLabels {
+            display: inline;
+        }
+
+        .selector {
+            height: 40px;
+            max-width: 400px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .selector .prev-next {
+            position: absolute;
+            padding: 0 10px;
+            font-size: 30px;
+            line-height: 20px;
+            background: white;
+            font-weight: bold;
+            color: #999;
+            top: -2px;
+            display: none;
+            border: none;
+        }
+
+        .selector .custom-combobox {
+            display: block;
+            position: absolute;
+            left: 40px;
+            right: 65px;
+        }
+
+        .selector .custom-combobox .custom-combobox-input {
+            position: absolute;
+            font-size: 14px;
+            color: silver;
+            border-radius: 3px 0 0 3px;
+            height: 32px;
+            display: block;
+            background: url("https://www.highcharts.com/samples/graphics/search.png") 5px 8px no-repeat white;
+            padding: 1px 5px 1px 30px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .selector .custom-combobox .ui-autocomplete-input:focus {
+            color: black;
+        }
+
+        .selector .custom-combobox .ui-autocomplete-input.valid {
+            color: black;
+        }
+
+        .selector .custom-combobox-toggle {
+            position: absolute;
+            display: block;
+            right: -32px;
+            border-radius: 0 3px 3px 0;
+            height: 32px;
+            width: 32px;
+        }
+
+        .selector #btn-next-map {
+            right: -12px;
+        }
+
+        .ui-autocomplete {
+            max-height: 500px;
+            overflow: auto;
+        }
+
+        .ui-autocomplete .option-header {
+            font-style: italic;
+            font-weight: bold;
+            margin: 5px 0;
+            font-size: 1.2em;
+            color: gray;
+        }
+
+        .loading {
+            margin-top: 10em;
+            text-align: center;
+            color: gray;
+        }
+
+        .ui-button-icon-only .ui-button-text {
+            height: 26px;
+            padding: 0 !important;
+            background: white;
+        }
+
+        #info-box .button {
+            border: none;
+            border-radius: 3px;
+            background: #a4edba;
+            padding: 5px;
+            color: black;
+            text-decoration: none;
+            font-size: 12px;
+            white-space: nowrap;
+            cursor: pointer;
+            margin: 0 3px;
+            line-height: 30px;
+        }
+    </style>
+</head>
+
+<body class="hold-transition sidebar-mini">
+    <div class="wrapper">
+
+        <!-- Main Sidebar Container -->
+        <aside class="main-sidebar sidebar-light-danger elevation-4 ">
+            <!-- Brand Logo -->
+
+
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <!-- Sidebar user (optional) -->
+                <div class="user-panel mt-5 pb-3 mb-3 d-flex">
+                    <div class="image">
+                        <img src="arif.JPG" class="img-circle elevation-2" alt="User Image">
+                    </div>
+                    <div class="info">
+                        <h5 class="mt-2 "><a href="#" class="d-block text-dark">Arif Hidayat</a></h5>
+                    </div>
+                </div>
+                <div class="user-panel pb-3 mb-3 d-flex">
+                    <div class="info">
+                        <h5 class="mt-2 "><a href="#" class="d-block text-dark">CHART JS</a></h5>
+                    </div>
+                </div>
+
+
+                <!-- Sidebar Menu -->
+                <nav class="mt-5">
+                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
+                        data-accordion="false">
+                        <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+
+                        <li class="nav-item mb-3">
+                            <a href="index.html" class="nav-link ">
+                                <i class="nav-icon fas fa-table"></i>
+                                <p>
+                                    Chart Bar/line
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item mb-3 ">
+                            <a href="chartpie.html" class="nav-link ">
+                                <i class="nav-icon bi bi-pie-chart"></i>
+                                <p>
+                                    Chart Pie
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item mb-3">
+                            <a href="chart3d.html" class="nav-link">
+                                <i class="nav-icon bi bi-badge-3d"></i>
+                                <p>
+                                    Chart 3D
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item mb-3  ml-3">
+                            <a href="map.html" class="nav-link active shadow">
+                                <i class="nav-icon bi bi-globe-asia-australia"></i>
+                                <p>
+                                    Maps
+                                </p>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <!-- /.sidebar-menu -->
+            </div>
+            <!-- /.sidebar -->
+        </aside>
+
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            <!-- Content Header (Page header) -->
+            <section class="content-header">
+                <div class="container-fluid">
+                    <div class="row mb-2">
+                        <div class="col-sm-6">
+                            <h1>MAPS</h1>
+                        </div>
+                        <div class="col-sm-6">
+                            <ol class="breadcrumb float-sm-right">
+                                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                                <li class="breadcrumb-item active">Maps</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div><!-- /.container-fluid -->
+            </section>
+
+            <!-- Main content -->
+            <section class="content">
+                <div class="container-fluid">
+                    <div class="row mb-2">
+                        <div class=" col-sm-12">
+                            <div id="demo-wrapper">
+                                <div id="map-box">
+                                    <div id="up"></div>
+                                    <div class="selector">
+                                        <button id="btn-prev-map" class="prev-next" aria-label="Previous map"><i
+                                                class="fa fa-angle-left"></i></button>
+                                        <!-- Note: jQuery UI combobox should be replaced with an accessible widget -->
+                                        <select aria-label="Select a map to display" id="mapDropdown"
+                                            class="ui-widget combobox"></select>
+                                        <button id="btn-next-map" class="prev-next" aria-label="Next map"><i
+                                                class="fa fa-angle-right"></i></button>
+                                    </div>
+                                    <div id="container"></div>
+                                </div>
+                                <div id="side-box">
+                                    <input type="checkbox" id="chkDataLabels" checked='checked' />
+                                    <label for="chkDataLabels">Data labels</label>
+                                    <div id="info-box">
+                                        <h4>This map</h4>
+                                        <div id="download"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class=" col-sm-12">
+                        <div id="map1"></div>
+                    </div>
+                </div>
+
+            </section>
+
+        </div>
+
+        <footer class="main-footer text-center bg-light">
+            <strong>Copyright &copy; <a href="https://maxy.academy" class="text-dark">Maxy Academy</a>.</strong> All
+            rights
+            reserved.
+        </footer>
+
+
+        <!-- Control Sidebar -->
+        <aside class="control-sidebar control-sidebar-dark">
+            <!-- Control sidebar content goes here -->
+        </aside>
+        <!-- /.control-sidebar -->
+    </div>
+    <!-- ./wrapper -->
+
+    <!-- jQuery -->
+    <script src="AdminLTE-3.2.0/plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="AdminLTE-3.2.0/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- jQuery UI -->
+    <script src="AdminLTE-3.2.0/plugins/jquery-ui/jquery-ui.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="AdminLTE-3.2.0/dist/js/adminlte.min.js"></script>
+    <!-- fullCalendar 2.2.5 -->
+    <script src="AdminLTE-3.2.0/plugins/moment/moment.min.js"></script>
+    <script src="AdminLTE-3.2.0/plugins/fullcalendar/main.js"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="AdminLTE-3.2.0/dist/js/demo.js"></script>
+    <!-- AOS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://code.highcharts.com/maps/highmaps.js"></script>
+    <script src="https://code.highcharts.com/mapdata/index.js"></script>
+    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>
+    <script src="https://www.highcharts.com/samples/static/jquery.combobox.js"></script>
+    <script src="https://code.highcharts.com/maps/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/maps/modules/offline-exporting.js"></script>
+    <script src="highcharts/themes/dark-unica.js"></script>
+    <script src="map.js"></script>
+
+</body>
+
+</html>
